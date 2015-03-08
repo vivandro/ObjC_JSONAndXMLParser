@@ -81,13 +81,9 @@
 		CA1A18351AACE9770015BB3A /* vTutorial_ParsingJSONandXML */ = {
 			isa = PBXGroup;
 			children = (
-				CA1A183A1AACE9770015BB3A /* AppDelegate.h */,
-				CA1A183B1AACE9770015BB3A /* AppDelegate.m */,
 				CA1A183D1AACE9770015BB3A /* ViewController.h */,
 				CA1A183E1AACE9770015BB3A /* ViewController.m */,
 				CA1A18401AACE9770015BB3A /* Main.storyboard */,
-				CA1A18431AACE9770015BB3A /* Images.xcassets */,
-				CA1A18451AACE9770015BB3A /* LaunchScreen.xib */,
 				CA1A18361AACE9770015BB3A /* Supporting Files */,
 			);
 			path = vTutorial_ParsingJSONandXML;
@@ -96,6 +92,10 @@
 		CA1A18361AACE9770015BB3A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA1A183A1AACE9770015BB3A /* AppDelegate.h */,
+				CA1A183B1AACE9770015BB3A /* AppDelegate.m */,
+				CA1A18431AACE9770015BB3A /* Images.xcassets */,
+				CA1A18451AACE9770015BB3A /* LaunchScreen.xib */,
 				CA1A18371AACE9770015BB3A /* Info.plist */,
 				CA1A18381AACE9770015BB3A /* main.m */,
 			);
@@ -168,6 +168,7 @@
 				TargetAttributes = {
 					CA1A18321AACE9770015BB3A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = A78H8C55MT;
 					};
 					CA1A184B1AACE9770015BB3A = {
 						CreatedOnToolsVersion = 6.1;
