@@ -15,6 +15,7 @@
 		CA1A18531AACE9770015BB3A /* vTutorial_ParsingJSONandXMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18521AACE9770015BB3A /* vTutorial_ParsingJSONandXMLTests.m */; };
 		CA1A185E1AACF4D10015BB3A /* VVCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A185D1AACF4D10015BB3A /* VVCollectionViewController.m */; };
 		CA1A18621AACF5980015BB3A /* Top100ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18611AACF5980015BB3A /* Top100ViewController.m */; };
+		CA1A18661AACF85A0015BB3A /* Top100ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18651AACF85A0015BB3A /* Top100ListCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		CA1A185D1AACF4D10015BB3A /* VVCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VVCollectionViewController.m; path = UIElements/VVCollectionViewController.m; sourceTree = "<group>"; };
 		CA1A18601AACF5980015BB3A /* Top100ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Top100ViewController.h; path = Top100/Top100ViewController.h; sourceTree = "<group>"; };
 		CA1A18611AACF5980015BB3A /* Top100ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Top100ViewController.m; path = Top100/Top100ViewController.m; sourceTree = "<group>"; };
+		CA1A18641AACF85A0015BB3A /* Top100ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Top100ListCell.h; path = Top100/Top100ListCell.h; sourceTree = "<group>"; };
+		CA1A18651AACF85A0015BB3A /* Top100ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Top100ListCell.m; path = Top100/Top100ListCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 			children = (
 				CA1A18601AACF5980015BB3A /* Top100ViewController.h */,
 				CA1A18611AACF5980015BB3A /* Top100ViewController.m */,
+				CA1A18641AACF85A0015BB3A /* Top100ListCell.h */,
+				CA1A18651AACF85A0015BB3A /* Top100ListCell.m */,
 			);
 			name = Top100;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 				CA1A183C1AACE9770015BB3A /* AppDelegate.m in Sources */,
 				CA1A185E1AACF4D10015BB3A /* VVCollectionViewController.m in Sources */,
 				CA1A18391AACE9770015BB3A /* main.m in Sources */,
+				CA1A18661AACF85A0015BB3A /* Top100ListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
