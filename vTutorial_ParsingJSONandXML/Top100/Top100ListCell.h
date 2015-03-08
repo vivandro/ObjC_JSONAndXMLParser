@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppSummaryModel.h"
 
 /*
  * We want to display the image, rank, title and description of app.
  */
 
 @interface Top100ListCell : UICollectionViewCell
+
+-(void) updateForAppSummary:(AppSummaryModel *)appSummary;
 
 @end

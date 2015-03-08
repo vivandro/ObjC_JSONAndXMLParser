@@ -8,6 +8,7 @@
 
 #import "Top100ViewController.h"
 #import "Top100ListCell.h"
+#import "AppSummaryModel.h"
 
 @interface Top100ViewController ()
 
@@ -24,7 +25,14 @@ static NSString * const reuseIdentifier = @"Top100ListCell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[Top100ListCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    // V.V.Important: We should not register the cell class from code if we are setting it up
+    // from the Storyboard. Otherwise the prototype cell is ignored entirely. Until I commented
+    // out the line below, I was seeing the subviews of the cell as nil because it seems that the
+    // collection view was instantiating the cell from the class name I'm registering below and thus
+    // calling the incorrect init method. I'm guessing that the storyboard hookup results in a call
+    // to the initwithxib*** method which correctly knows to create and hook up the sbviews as laid out
+    // in the story board.
+    //[self.collectionView registerClass:[Top100ListCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
 }
@@ -47,7 +55,6 @@ static NSString * const reuseIdentifier = @"Top100ListCell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
     return 1;
 }
 
@@ -58,12 +65,17 @@ static NSString * const reuseIdentifier = @"Top100ListCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    Top100ListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
     // The cells come with all elements having clearColor. So we paint the background for the cell
     // to become visible.
     cell.backgroundColor = [UIColor purpleColor];
+    AppSummaryModel *dummyModel = [AppSummaryModel new];
+    dummyModel.rank = @(indexPath.row);
+    dummyModel.title = @"abc";
+    dummyModel.subTitle = @"dfghjkdfhgkd";
+    [cell updateForAppSummary:dummyModel];
     
     return cell;
 }

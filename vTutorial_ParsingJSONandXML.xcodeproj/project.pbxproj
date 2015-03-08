@@ -16,6 +16,7 @@
 		CA1A185E1AACF4D10015BB3A /* VVCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A185D1AACF4D10015BB3A /* VVCollectionViewController.m */; };
 		CA1A18621AACF5980015BB3A /* Top100ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18611AACF5980015BB3A /* Top100ViewController.m */; };
 		CA1A18661AACF85A0015BB3A /* Top100ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18651AACF85A0015BB3A /* Top100ListCell.m */; };
+		CA1A18691AAD03470015BB3A /* AppSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18681AAD03470015BB3A /* AppSummaryModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		CA1A18611AACF5980015BB3A /* Top100ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Top100ViewController.m; path = Top100/Top100ViewController.m; sourceTree = "<group>"; };
 		CA1A18641AACF85A0015BB3A /* Top100ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Top100ListCell.h; path = Top100/Top100ListCell.h; sourceTree = "<group>"; };
 		CA1A18651AACF85A0015BB3A /* Top100ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Top100ListCell.m; path = Top100/Top100ListCell.m; sourceTree = "<group>"; };
+		CA1A18671AAD03470015BB3A /* AppSummaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppSummaryModel.h; path = Models/AppSummaryModel.h; sourceTree = "<group>"; };
+		CA1A18681AAD03470015BB3A /* AppSummaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppSummaryModel.m; path = Models/AppSummaryModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,7 @@
 			children = (
 				CA1A18401AACE9770015BB3A /* Main.storyboard */,
 				CA1A18631AACF59E0015BB3A /* Top100 */,
+				CA1A186A1AAD034F0015BB3A /* Models */,
 				CA1A185F1AACF4DC0015BB3A /* UIElements */,
 				CA1A18361AACE9770015BB3A /* Supporting Files */,
 			);
@@ -143,6 +147,15 @@
 				CA1A18651AACF85A0015BB3A /* Top100ListCell.m */,
 			);
 			name = Top100;
+			sourceTree = "<group>";
+		};
+		CA1A186A1AAD034F0015BB3A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA1A18671AAD03470015BB3A /* AppSummaryModel.h */,
+				CA1A18681AAD03470015BB3A /* AppSummaryModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +263,7 @@
 				CA1A183C1AACE9770015BB3A /* AppDelegate.m in Sources */,
 				CA1A185E1AACF4D10015BB3A /* VVCollectionViewController.m in Sources */,
 				CA1A18391AACE9770015BB3A /* main.m in Sources */,
+				CA1A18691AAD03470015BB3A /* AppSummaryModel.m in Sources */,
 				CA1A18661AACF85A0015BB3A /* Top100ListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
