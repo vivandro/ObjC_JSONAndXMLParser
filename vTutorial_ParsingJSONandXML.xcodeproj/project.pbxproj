@@ -13,6 +13,8 @@
 		CA1A18441AACE9770015BB3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1A18431AACE9770015BB3A /* Images.xcassets */; };
 		CA1A18471AACE9770015BB3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA1A18451AACE9770015BB3A /* LaunchScreen.xib */; };
 		CA1A18531AACE9770015BB3A /* vTutorial_ParsingJSONandXMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18521AACE9770015BB3A /* vTutorial_ParsingJSONandXMLTests.m */; };
+		CA1A185E1AACF4D10015BB3A /* VVCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A185D1AACF4D10015BB3A /* VVCollectionViewController.m */; };
+		CA1A18621AACF5980015BB3A /* Top100ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18611AACF5980015BB3A /* Top100ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,10 @@
 		CA1A184C1AACE9770015BB3A /* vTutorial_ParsingJSONandXMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vTutorial_ParsingJSONandXMLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1A18511AACE9770015BB3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA1A18521AACE9770015BB3A /* vTutorial_ParsingJSONandXMLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vTutorial_ParsingJSONandXMLTests.m; sourceTree = "<group>"; };
+		CA1A185C1AACF4D10015BB3A /* VVCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VVCollectionViewController.h; path = UIElements/VVCollectionViewController.h; sourceTree = "<group>"; };
+		CA1A185D1AACF4D10015BB3A /* VVCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VVCollectionViewController.m; path = UIElements/VVCollectionViewController.m; sourceTree = "<group>"; };
+		CA1A18601AACF5980015BB3A /* Top100ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Top100ViewController.h; path = Top100/Top100ViewController.h; sourceTree = "<group>"; };
+		CA1A18611AACF5980015BB3A /* Top100ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Top100ViewController.m; path = Top100/Top100ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				CA1A18401AACE9770015BB3A /* Main.storyboard */,
+				CA1A18631AACF59E0015BB3A /* Top100 */,
+				CA1A185F1AACF4DC0015BB3A /* UIElements */,
 				CA1A18361AACE9770015BB3A /* Supporting Files */,
 			);
 			path = vTutorial_ParsingJSONandXML;
@@ -112,6 +120,24 @@
 				CA1A18511AACE9770015BB3A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CA1A185F1AACF4DC0015BB3A /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				CA1A185C1AACF4D10015BB3A /* VVCollectionViewController.h */,
+				CA1A185D1AACF4D10015BB3A /* VVCollectionViewController.m */,
+			);
+			name = UIElements;
+			sourceTree = "<group>";
+		};
+		CA1A18631AACF59E0015BB3A /* Top100 */ = {
+			isa = PBXGroup;
+			children = (
+				CA1A18601AACF5980015BB3A /* Top100ViewController.h */,
+				CA1A18611AACF5980015BB3A /* Top100ViewController.m */,
+			);
+			name = Top100;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1A18621AACF5980015BB3A /* Top100ViewController.m in Sources */,
 				CA1A183C1AACE9770015BB3A /* AppDelegate.m in Sources */,
+				CA1A185E1AACF4D10015BB3A /* VVCollectionViewController.m in Sources */,
 				CA1A18391AACE9770015BB3A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
