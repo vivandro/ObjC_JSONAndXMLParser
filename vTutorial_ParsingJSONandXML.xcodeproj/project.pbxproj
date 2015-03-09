@@ -409,6 +409,7 @@
 				INFOPLIST_FILE = vTutorial_ParsingJSONandXML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -419,6 +420,7 @@
 				INFOPLIST_FILE = vTutorial_ParsingJSONandXML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -475,6 +477,7 @@
 				CA1A18581AACE9770015BB3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA1A18591AACE9770015BB3A /* Build configuration list for PBXNativeTarget "vTutorial_ParsingJSONandXMLTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +486,7 @@
 				CA1A185B1AACE9770015BB3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

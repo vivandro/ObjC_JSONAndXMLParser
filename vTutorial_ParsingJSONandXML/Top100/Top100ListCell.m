@@ -21,7 +21,8 @@
 
 -(void)updateForAppSummary:(AppSummaryModel *)appSummary {
     self.rankLabel.text = [NSString stringWithFormat:@"%@", appSummary.rank];
-    self.titleLabel.text = appSummary.title;
+    // I've hidden the rank label because the layout did not look good with it in the cell.
+    self.titleLabel.text = [NSString stringWithFormat:@"%@: %@", appSummary.rank, appSummary.title];
     self.subTitleLabel.text = appSummary.subTitle;
     // TODO: Need to kick off a download block that downloads the image from the url and loads an image in the image view.
     //       User prepareForReuse: method to cancel the download if possible.

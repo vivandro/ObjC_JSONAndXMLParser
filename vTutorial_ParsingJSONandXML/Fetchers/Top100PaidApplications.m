@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Vichare, Pallavi. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "Top100PaidApplications.h"
 #import "VVNetworkDataFetcher.h"
 #import "AppSummaryModel.h"
@@ -49,17 +50,80 @@
                            weakSelf.me = nil;
                            return;
                        }
-                       NSMutableArray *rval = [[NSMutableArray alloc] init];
-                       for (int i = 1; i <= 50; ++i) {
-                           AppSummaryModel *dummyModel = [AppSummaryModel new];
-                           dummyModel.rank = @(i);
-                           dummyModel.title = @"aaaha";
-                           dummyModel.subTitle = @"hello workd";
-                           [rval addObject:dummyModel];
-                       }
-                       weakSelf.completion(rval);
+
+                       weakSelf.completion([weakSelf extractAppListFromJSONData:data]);
                        weakSelf.me  = nil;
                    }];
+}
+
+-(NSArray *)extractAppListFromJSONData:(NSData *)data {
+    if (!data) {
+        return nil;
+    }
+    NSError *error;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:data
+                                                    options:NSJSONReadingAllowFragments
+                                                      error:&error];
+    if (!jsonObject
+        || ![jsonObject isKindOfClass:[NSDictionary class]]) {
+        return nil;
+    }
+    
+    NSDictionary *jsonAsDictionary = (NSDictionary *)jsonObject;
+
+    jsonObject = jsonAsDictionary[@"feed"];
+    if (!jsonObject
+        || ![jsonObject isKindOfClass:[NSDictionary class]]) {
+        return nil;
+    }
+    NSDictionary *feed = (NSDictionary *)jsonObject;
+
+    jsonObject = feed[@"entry"];
+    if (!jsonObject
+        || ![jsonObject isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    NSArray *entries = (NSArray *)jsonObject;
+    
+    NSMutableArray *appList = [[NSMutableArray alloc] init];
+    for (int i = 0; i < entries.count; ++i) {
+        NSDictionary *entryDict = (NSDictionary *)entries[i];
+        if (!entryDict
+            || ![entryDict isKindOfClass:[NSDictionary class]]) {
+            return nil;
+        }
+        AppSummaryModel *dummyModel = [AppSummaryModel new];
+        dummyModel.rank = @(i+1);
+        
+        NSDictionary *subEntry = entryDict[@"im:name"];
+        if (!subEntry
+            || ![subEntry isKindOfClass:[NSDictionary class]]) {
+            return nil;
+        }
+        
+        NSString *title = subEntry[@"label"];
+        if (!title
+            || ![title isKindOfClass:[NSString class]]) {
+            return nil;
+        }
+        dummyModel.title = title;
+        
+        subEntry = entryDict[@"summary"];
+        if (!subEntry
+            || ![subEntry isKindOfClass:[NSDictionary class]]) {
+            return nil;
+        }
+        
+        NSString *subTitle = subEntry[@"label"];
+        if (!subTitle
+            || ![subTitle isKindOfClass:[NSString class]]) {
+            return nil;
+        }
+        dummyModel.subTitle = subTitle;
+        
+        [appList addObject:dummyModel];
+    }
+    return appList;
 }
 
 @end
