@@ -3,7 +3,7 @@
 //  vTutorial_ParsingJSONandXML
 //
 //  Created by Vichare, Vivek on 3/8/15.
-//  Copyright (c) 2015 Vichare, Pallavi. All rights reserved.
+//  Copyright (c) 2015 Vichare, Vivek. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -92,8 +92,8 @@
             || ![entryDict isKindOfClass:[NSDictionary class]]) {
             return nil;
         }
-        AppSummaryModel *dummyModel = [AppSummaryModel new];
-        dummyModel.rank = @(i+1);
+        AppSummaryModel *appSummaryModel = [AppSummaryModel new];
+        appSummaryModel.rank = @(i+1);
         
         NSDictionary *subEntry = entryDict[@"im:name"];
         if (!subEntry
@@ -106,7 +106,7 @@
             || ![title isKindOfClass:[NSString class]]) {
             return nil;
         }
-        dummyModel.title = title;
+        appSummaryModel.title = title;
         
         subEntry = entryDict[@"summary"];
         if (!subEntry
@@ -119,7 +119,7 @@
             || ![subTitle isKindOfClass:[NSString class]]) {
             return nil;
         }
-        dummyModel.subTitle = subTitle;
+        appSummaryModel.subTitle = subTitle;
         
         NSArray *imageArray = entryDict[@"im:image"];
         if (!imageArray
@@ -138,8 +138,8 @@
             || ![imageUrlString isKindOfClass:[NSString class]]) {
             return nil;
         }
-        dummyModel.imageUrlString = imageUrlString;
-        [appList addObject:dummyModel];
+        appSummaryModel.imageUrlString = imageUrlString;
+        [appList addObject:appSummaryModel];
     }
     return appList;
 }

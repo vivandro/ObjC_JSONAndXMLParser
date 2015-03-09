@@ -12,7 +12,6 @@
 @interface Top100ListCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *rankLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
 
@@ -23,8 +22,6 @@
 @implementation Top100ListCell
 
 -(void)updateForAppSummary:(AppSummaryModel *)appSummary {
-    self.rankLabel.text = [NSString stringWithFormat:@"%@", appSummary.rank];
-    // I've hidden the rank label because the layout did not look good with it in the cell.
     self.titleLabel.text = [NSString stringWithFormat:@"%@: %@", appSummary.rank, appSummary.title];
     self.subTitleLabel.text = appSummary.subTitle;
 
@@ -39,6 +36,7 @@
                        }
                        UIImage *image = [UIImage imageWithData:data];
                        weakSelf.imageView.image = image;
+                       [weakSelf.imageView setNeedsDisplay];
                    }];
 }
 

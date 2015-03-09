@@ -3,7 +3,7 @@
 //  vTutorial_ParsingJSONandXML
 //
 //  Created by Vichare, Vivek on 3/8/15.
-//  Copyright (c) 2015 Vichare, Pallavi. All rights reserved.
+//  Copyright (c) 2015 Vichare, Vivek. All rights reserved.
 //
 
 #import "Top100ViewController.h"
@@ -38,6 +38,8 @@ static NSString * const reuseIdentifier = @"Top100ListCell";
     //[self.collectionView registerClass:[Top100ListCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    self.collectionView.contentInset = UIEdgeInsetsMake(0, 10, 0, 10);
+    
     __weak Top100ViewController *weakSelf = self;
     [Top100PaidApplications fetchWithCompletionBlock:^(NSArray *appList) {
         weakSelf.appList = appList;
@@ -75,11 +77,8 @@ static NSString * const reuseIdentifier = @"Top100ListCell";
     Top100ListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    // The cells come with all elements having clearColor. So we paint the background for the cell
-    // to become visible.
-    cell.backgroundColor = [UIColor purpleColor];
-    AppSummaryModel *dummyModel = self.appList[indexPath.row];
-    [cell updateForAppSummary:dummyModel];
+    AppSummaryModel *appSummaryModel = self.appList[indexPath.row];
+    [cell updateForAppSummary:appSummaryModel];
     
     return cell;
 }
