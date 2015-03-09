@@ -121,6 +121,24 @@
         }
         dummyModel.subTitle = subTitle;
         
+        NSArray *imageArray = entryDict[@"im:image"];
+        if (!imageArray
+            || ![imageArray isKindOfClass:[NSArray class]]
+            || (0 == imageArray.count)) {
+            return nil;
+        }
+        
+        subEntry = imageArray[imageArray.count - 1];
+        if (!subEntry
+            || ![subEntry isKindOfClass:[NSDictionary class]]) {
+            return nil;
+        }
+        NSString *imageUrlString = (NSString *)subEntry[@"label"];
+        if (!imageUrlString
+            || ![imageUrlString isKindOfClass:[NSString class]]) {
+            return nil;
+        }
+        dummyModel.imageUrlString = imageUrlString;
         [appList addObject:dummyModel];
     }
     return appList;

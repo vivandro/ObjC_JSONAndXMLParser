@@ -3,10 +3,11 @@
 //  vTutorial_ParsingJSONandXML
 //
 //  Created by Vichare, Vivek on 3/8/15.
-//  Copyright (c) 2015 Vichare, Pallavi. All rights reserved.
+//  Copyright (c) 2015 Vichare, Palla. All rights reserved.
 //
 
 #import "Top100ListCell.h"
+#import "VVNetworkDataFetcher.h"
 
 @interface Top100ListCell ()
 
@@ -14,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *rankLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
+
+@property (nonatomic, copy) NSString *imageUrlString;
 
 @end
 
@@ -24,8 +27,23 @@
     // I've hidden the rank label because the layout did not look good with it in the cell.
     self.titleLabel.text = [NSString stringWithFormat:@"%@: %@", appSummary.rank, appSummary.title];
     self.subTitleLabel.text = appSummary.subTitle;
-    // TODO: Need to kick off a download block that downloads the image from the url and loads an image in the image view.
-    //       User prepareForReuse: method to cancel the download if possible.
+
+    // save the imageUrlString for comparison whenthe image fetch is finished.
+    self.imageUrlString = appSummary.imageUrlString;
+    __weak Top100ListCell *weakSelf = self;
+    NSString *urlStringCopy = [self.imageUrlString copy];
+    [VVNetworkDataFetcher fetchFromUrl:self.imageUrlString
+                   withCompletionBlock:^(NSData *data){
+                       if (![urlStringCopy isEqualToString:weakSelf.imageUrlString]) {
+                           return;
+                       }
+                       UIImage *image = [UIImage imageWithData:data];
+                       weakSelf.imageView.image = image;
+                   }];
+}
+
+-(void)prepareForReuse {
+    self.imageView.image = nil;
 }
 
 @end
