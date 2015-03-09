@@ -17,6 +17,8 @@
 		CA1A18621AACF5980015BB3A /* Top100ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18611AACF5980015BB3A /* Top100ViewController.m */; };
 		CA1A18661AACF85A0015BB3A /* Top100ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18651AACF85A0015BB3A /* Top100ListCell.m */; };
 		CA1A18691AAD03470015BB3A /* AppSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18681AAD03470015BB3A /* AppSummaryModel.m */; };
+		CA1A186E1AAD108B0015BB3A /* Top100PaidApplications.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A186D1AAD108B0015BB3A /* Top100PaidApplications.m */; };
+		CA1A18711AAD12060015BB3A /* VVNetworkDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1A18701AAD12060015BB3A /* VVNetworkDataFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		CA1A18651AACF85A0015BB3A /* Top100ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Top100ListCell.m; path = Top100/Top100ListCell.m; sourceTree = "<group>"; };
 		CA1A18671AAD03470015BB3A /* AppSummaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppSummaryModel.h; path = Models/AppSummaryModel.h; sourceTree = "<group>"; };
 		CA1A18681AAD03470015BB3A /* AppSummaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppSummaryModel.m; path = Models/AppSummaryModel.m; sourceTree = "<group>"; };
+		CA1A186C1AAD108B0015BB3A /* Top100PaidApplications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Top100PaidApplications.h; path = Fetchers/Top100PaidApplications.h; sourceTree = "<group>"; };
+		CA1A186D1AAD108B0015BB3A /* Top100PaidApplications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Top100PaidApplications.m; path = Fetchers/Top100PaidApplications.m; sourceTree = "<group>"; };
+		CA1A186F1AAD12060015BB3A /* VVNetworkDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VVNetworkDataFetcher.h; path = Fetchers/VVNetworkDataFetcher.h; sourceTree = "<group>"; };
+		CA1A18701AAD12060015BB3A /* VVNetworkDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VVNetworkDataFetcher.m; path = Fetchers/VVNetworkDataFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 				CA1A18401AACE9770015BB3A /* Main.storyboard */,
 				CA1A18631AACF59E0015BB3A /* Top100 */,
 				CA1A186A1AAD034F0015BB3A /* Models */,
+				CA1A186B1AAD0FF30015BB3A /* Fetchers */,
 				CA1A185F1AACF4DC0015BB3A /* UIElements */,
 				CA1A18361AACE9770015BB3A /* Supporting Files */,
 			);
@@ -156,6 +163,17 @@
 				CA1A18681AAD03470015BB3A /* AppSummaryModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		CA1A186B1AAD0FF30015BB3A /* Fetchers */ = {
+			isa = PBXGroup;
+			children = (
+				CA1A186C1AAD108B0015BB3A /* Top100PaidApplications.h */,
+				CA1A186D1AAD108B0015BB3A /* Top100PaidApplications.m */,
+				CA1A186F1AAD12060015BB3A /* VVNetworkDataFetcher.h */,
+				CA1A18701AAD12060015BB3A /* VVNetworkDataFetcher.m */,
+			);
+			name = Fetchers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +279,10 @@
 			files = (
 				CA1A18621AACF5980015BB3A /* Top100ViewController.m in Sources */,
 				CA1A183C1AACE9770015BB3A /* AppDelegate.m in Sources */,
+				CA1A18711AAD12060015BB3A /* VVNetworkDataFetcher.m in Sources */,
 				CA1A185E1AACF4D10015BB3A /* VVCollectionViewController.m in Sources */,
 				CA1A18391AACE9770015BB3A /* main.m in Sources */,
+				CA1A186E1AAD108B0015BB3A /* Top100PaidApplications.m in Sources */,
 				CA1A18691AAD03470015BB3A /* AppSummaryModel.m in Sources */,
 				CA1A18661AACF85A0015BB3A /* Top100ListCell.m in Sources */,
 			);

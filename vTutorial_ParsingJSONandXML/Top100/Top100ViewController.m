@@ -9,8 +9,11 @@
 #import "Top100ViewController.h"
 #import "Top100ListCell.h"
 #import "AppSummaryModel.h"
+#import "Top100PaidApplications.h"
 
 @interface Top100ViewController ()
+
+@property (nonatomic) NSArray *appList;
 
 @end
 
@@ -35,6 +38,11 @@ static NSString * const reuseIdentifier = @"Top100ListCell";
     //[self.collectionView registerClass:[Top100ListCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    __weak Top100ViewController *weakSelf = self;
+    [Top100PaidApplications fetchWithCompletionBlock:^(NSArray *appList) {
+        weakSelf.appList = appList;
+        [weakSelf.collectionView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,8 +68,7 @@ static NSString * const reuseIdentifier = @"Top100ListCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 20;
+    return self.appList.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,10 +78,7 @@ static NSString * const reuseIdentifier = @"Top100ListCell";
     // The cells come with all elements having clearColor. So we paint the background for the cell
     // to become visible.
     cell.backgroundColor = [UIColor purpleColor];
-    AppSummaryModel *dummyModel = [AppSummaryModel new];
-    dummyModel.rank = @(indexPath.row);
-    dummyModel.title = @"abc";
-    dummyModel.subTitle = @"dfghjkdfhgkd";
+    AppSummaryModel *dummyModel = self.appList[indexPath.row];
     [cell updateForAppSummary:dummyModel];
     
     return cell;
